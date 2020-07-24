@@ -27,7 +27,7 @@ console.log("makeHrSegment -> hr", hr)
     txt.addClass("col-10");
     
     //save section for click
-    var saveIt = $("<div>");
+    var saveIt = $("<button>");
     saveIt.addClass("col saveBtn");
     saveIt.text("save");
     
