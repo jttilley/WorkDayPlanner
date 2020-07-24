@@ -52,9 +52,5 @@ console.log("makeHrSegment -> hr", hr)
 
 }
 
-
-
-// a click event for adding notes to a segment
-
 // click event for saving a note
 
