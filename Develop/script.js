@@ -36,11 +36,17 @@ function makeHrSegment(hr) {
     //text area for editing
     var txt = $("<textarea>");
     txt.addClass("col-10");
+    txt.val(localStorage.getItem("hour-" + hr) || "")
     
     //save section for click
     var saveIt = $("<button>");
     saveIt.addClass("col-1 saveBtn");
-    saveIt.text("save");
+    var saveImg = $("<img>");
+    saveImg.attr("src", "./Assets/save image.png"); //https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgglvvDWl2EKSUIPoQscNSdy5DiuIm7eRnWA&usqp=CAU
+    saveIt.append(saveImg);
+    console.log("makeHrSegment -> saveImg", saveImg)
+    
+    // saveIt.text("save");
     
     //append section to container
     row.append(hour, txt, saveIt);
@@ -50,8 +56,8 @@ function makeHrSegment(hr) {
     
     var hrInt = parseInt(hr)
     var curHr = parseInt(moment().format("h"));
-    console.log("makeHrSegment -> hr", hr);
-    console.log("makeHrSegment -> curHr", curHr);
+    // console.log("makeHrSegment -> hr", hr);
+    // console.log("makeHrSegment -> curHr", curHr);
 
     if (hr === curHr) {
         row.addClass("present");
@@ -77,10 +83,16 @@ $(".saveBtn").on("click", function(e) {
 
     // get appointments for segment
     var appointment = $(this).prev().val(); 
+
     console.log("appointment", appointment)
 
     // save schedule in hr
-    localStorage()
+    var storage = "hour-" + hr;
+    if (appointment !== "") {
+        localStorage.setItem(storage, appointment);
+    } else {
+        localStorage.removeItem(storage);
+    }
     
 })
 
