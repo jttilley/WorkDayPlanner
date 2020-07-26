@@ -3,24 +3,35 @@ var container = $(".container");
 
 // get the current date
 $("#currentDay").text(moment().format('MMMM Do YYYY'))
-makeHrSegment("9");
+
+// make hour blocks
+for (i = 9; i !== 6; i++) {
+    makeHrSegment(i);
+
+    // if hour = 12 then rest to start hrs back at 1
+    if (i === 12) {
+        i = 0;
+    }
+}
 
 // function to make an hour segment
 function makeHrSegment(hr) {
-console.log("makeHrSegment -> hr", hr)
+    // console.log("makeHrSegment -> hr", hr)
     var tm = hr;
     if (hr < 12 && hr > 6) {
-        tm += " am";
-    }else { 
-        tm += " pm";
+        tm += "am";
+    } else { 
+        tm += "pm";
     }
     // make a row to append to 
     var row = $("<div>");
-    row.addClass("row time-block");
+    row.addClass("row time-block ");
+    row.attr("data-time",hr);
+    // row.attr("data-id",tm);
 
     //hr section
     var hour = $("<div>").text(tm);
-    hour.addClass("col hour");
+    hour.addClass("col-1 hour");
 
     //text area for editing
     var txt = $("<textarea>");
@@ -28,7 +39,7 @@ console.log("makeHrSegment -> hr", hr)
     
     //save section for click
     var saveIt = $("<button>");
-    saveIt.addClass("col saveBtn");
+    saveIt.addClass("col-1 saveBtn");
     saveIt.text("save");
     
     //append section to container
@@ -39,12 +50,12 @@ console.log("makeHrSegment -> hr", hr)
     
     var hrInt = parseInt(hr)
     var curHr = parseInt(moment().format("h"));
-    // console.log("makeHrSegment -> hr", hr)
-    // console.log("makeHrSegment -> curHr", curHr)
+    console.log("makeHrSegment -> hr", hr);
+    console.log("makeHrSegment -> curHr", curHr);
 
     if (hr === curHr) {
         row.addClass("present");
-    } else if (hr > curHr || hr < 6 && hr > 8) {
+    } else if ((curHr > 8 && hr > curHr) || (curHr < 6 && hr < 6 && hr > curHr) || (hr < 6 && curHr > 8)) {
         row.addClass("future");
     } else {
         row.addClass("past");
@@ -53,4 +64,23 @@ console.log("makeHrSegment -> hr", hr)
 }
 
 // click event for saving a note
+$(".saveBtn").on("click", function(e) {
+    console.log($(this));
+    
+    // get hour for segment
+    var parentEl = $(this).parent();
+    var hr = parentEl.data("time");
+    var id = parentEl.data("id");
+    // var hr = row
+
+    console.log("hr", hr)
+
+    // get appointments for segment
+    var appointment = $(this).prev().val(); 
+    console.log("appointment", appointment)
+
+    // save schedule in hr
+    localStorage()
+    
+})
 
