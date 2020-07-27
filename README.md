@@ -15,5 +15,6 @@ Write the javascript to create the hour sements and allow the hourly schedule no
 # Screen shot:
 ![day planner screen shot](./Assets/Screen-Shot.png)
 
+
 # Functionality Demo:
 ![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
