@@ -13,7 +13,7 @@ Write the javascript to create the hour sements and allow the hourly schedule no
 * I made it so it deletes the hour segments that are empty from the local storage. 
 
 # Screen shot:
-![day planner screen shot](./Assets/Screen-Shot.png)
+![day planner screen shot](./Assets/Screen-Shot2.png)
 
 
 # Functionality Demo:
