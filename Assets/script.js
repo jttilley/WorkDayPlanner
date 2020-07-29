@@ -41,11 +41,13 @@ function makeHrSegment(hr) {
     //save section for click
     var saveIt = $("<button>");
     saveIt.addClass("col-1 saveBtn");
-    var saveImg = $("<img>");
-    saveImg.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgglvvDWl2EKSUIPoQscNSdy5DiuIm7eRnWA&usqp=CAU"); 
-    saveImg.attr("style","width: 25px;");
-    saveIt.append(saveImg);
-    console.log("makeHrSegment -> saveImg", saveImg)
+    saveIt.html(`<i class="far fa-save" style="font-size: 30px;"></i>`);
+    
+    // var saveImg = $("<img>");
+    // saveImg.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgglvvDWl2EKSUIPoQscNSdy5DiuIm7eRnWA&usqp=CAU"); 
+    // saveImg.attr("style","width: 25px;");
+    // saveIt.append(saveImg);
+    // console.log("makeHrSegment -> saveImg", saveImg)
     
     // saveIt.text("save");
     
