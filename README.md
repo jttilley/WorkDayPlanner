@@ -1,7 +1,11 @@
 # WorkDayPlanner
 
-# Project Link: 
-https://jttilley.github.io/WorkDayPlanner/
+# Links:
+Repo: https://github.com/jttilley/WorkDayPlanner
+Deployed: https://jttilley.github.io/WorkDayPlanner/index.html
+
+# Technologies used:
+HTML, CSS, Javascript, Bootstrap, FontAwesome, Moment.js
 
 # Objective: 
 Write the javascript to create the hour sements and allow the hourly schedule notes to be saved on local storage. Also color code the hours based on the current hour to be past, present, or future. 
@@ -15,6 +19,12 @@ Write the javascript to create the hour sements and allow the hourly schedule no
 # Screen shot:
 ![day planner screen shot](./Assets/Screen-Shot2.png)
 
-
 # Functionality Demo:
 ![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+
+# Author:
+* **Jason Tilley** - *java script*
+* **Denver University Bootcamp** - *HTML, CSS*
+
+# License
+*MIT* © 2020 Jason Tilley
